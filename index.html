@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Stats app - HS</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+    <script type="text/x-handlebars">    
+    <section class="wrap">
+      <div class="row">
+    <div class="col-xs-3">
+        
+      </div>
+      <div class="col-xs-6">
+     <div class="main_stuff" {{bind-attr class=mainclass}}>      
+          <div class="menu_main">
+            <ul>
+              <li class="menu">MENU</li>
+              {{#link-to "chartapp" tagName="li" href=false}}<span class="glyphicon glyphicon-edit"></span> <a {{bind-attr href="view.href"}}>Enter data</a>{{/link-to}}
+              {{#link-to "summary" tagName="li" href=false}}<span class="glyphicon glyphicon-eye-open"></span> <a {{bind-attr href="view.href"}}>Summary stats</a>{{/link-to}}
+              {{#link-to 'charts' tagName="li" href=false}}<span class="glyphicon glyphicon-stats"></span> <a {{bind-attr href="view.href"}}>Charts</a>{{/link-to}}
+              {{#link-to 'contacts' tagName="li" href=false}}<span class="glyphicon glyphicon-phone"></span> <a {{bind-attr href="view.href"}}>Contacts</a>{{/link-to}}
+            </ul>
+          </div>
+          menu_test: {{mainclass}}
+          {{menu-stub opend="open" closed="close"}}
+         {{outlet}}
+    </div>
+      </div>     
+      <div class="col-xs-3">
+        
+      </div>
+      </div>
+  </section>
+    </script>
+    <script type="text/x-handlebars" data-template-name="components/menu-stub">
+    {{#if isOpen}}
+      <div {{action "opend"}}>
+      
+            <span class="glyphicon glyphicon-align-justify"></span>
+
+      </div>
+      {{else}}
+      <div {{action "closed"}}>
+      
+            <span class="glyphicon glyphicon-align-justify"></span>
+
+      </div>
+     {{/if}}
+          
+    </script>
+    <script type="text/x-handlebars" data-template-name="chartapp">
+        <div class="main flipInY animated">
+          <div class="enter_data">
+            <div class="row">
+                <div class="col-xs-10">
+                <span class="main_heading">ANALYZE YOUR DATA</span>
+                </div>
+                <div class="col-xs-10 enter_data_main">
+                  <span><i class="glyphicon glyphicon-edit"></i> Enter your data</span>
+                </div>
+                <div class="col-xs-11 single">
+                   <small>Single array</small>
+                <div class="row">
+                  <div class="col-xs-1">
+                    
+                  </div>
+                  <div class="col-xs-11">
+                     <input type="text" name="single-array" value="" placeholder="Your dataset, separated by a comma.">
+                     <button class="single_submit">Analyze</button>
+                  </div>
+                </div>
+                </div>            
+                <div class="col-xs-11 double">
+                  <small>Double array</small>
+                  <div class="row">
+                  <div class="col-xs-1">
+                    
+                  </div>
+                  <div class="col-xs-11">
+                     <input type="text" name="double-array1" value="" placeholder="Your 1st dataset, separated by a comma.">
+                     <input type="text" name="double-array2" value="" placeholder="Your 2nd dataset, separated by a comma.">
+                     <button class="double_submit">Analyze</button>
+                  </div>
+                </div>
+                </div>
+          </div>
+          
+        </div>
+        
+      </div>
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="summary">
+       <div class="summary flipInY animated">
+            summary
+       </div>
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="charts">
+       <div class="chart flipInY animated">
+            chart
+       </div>
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="contacts">
+        <div class="contact flipInY animated">
+            contacts
+        </div>
+    </script>
+
+
+  <script src="js/libs/jquery-1.10.2.js"></script>
+  <script src="js/libs/handlebars-1.1.2.js"></script>
+  <script src="js/libs/ember-1.4.0.js"></script>
+  <script src="js/libs/bootstrap.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/view.js"></script>
+  <script src="js/controller.js"></script>
+  <script src="js/router.js"></script>
+  <!-- to activate the test runner, add the "?test" query string parameter -->
+  <script src="tests/runner.js"></script>
+</body>
+</html>
