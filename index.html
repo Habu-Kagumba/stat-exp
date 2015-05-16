@@ -8,14 +8,13 @@
   <link rel="stylesheet" href="css/bootstrap.css">
 </head>
 <body>
-    <script type="text/x-handlebars">    
+    <script type="text/x-handlebars">
     <section class="wrap">
       <div class="row">
     <div class="col-xs-3">
-        
       </div>
       <div class="col-xs-6">
-     <div class="main_stuff" {{bind-attr class=mainclass}}>      
+     <div class="main_stuff" {{bind-attr class=mainclass}}>
           <div class="menu_main">
             <ul>
               <li class="menu">MENU</li>
@@ -29,9 +28,8 @@
           {{menu-stub opend="open" closed="close"}}
          {{outlet}}
     </div>
-      </div>     
+      </div>
       <div class="col-xs-3">
-        
       </div>
       </div>
   </section>
@@ -39,18 +37,15 @@
     <script type="text/x-handlebars" data-template-name="components/menu-stub">
     {{#if isOpen}}
       <div {{action "opend"}}>
-      
             <span class="glyphicon glyphicon-align-justify"></span>
 
       </div>
       {{else}}
       <div {{action "closed"}}>
-      
             <span class="glyphicon glyphicon-align-justify"></span>
 
       </div>
      {{/if}}
-          
     </script>
     <script type="text/x-handlebars" data-template-name="chartapp">
         <div class="main flipInY animated">
@@ -66,19 +61,17 @@
                    <small>Single array</small>
                 <div class="row">
                   <div class="col-xs-1">
-                    
                   </div>
                   <div class="col-xs-11">
                      <input type="text" name="single-array" value="" placeholder="Your dataset, separated by a comma.">
                      <button class="single_submit">Analyze</button>
                   </div>
                 </div>
-                </div>            
+                </div>
                 <div class="col-xs-11 double">
                   <small>Double array</small>
                   <div class="row">
                   <div class="col-xs-1">
-                    
                   </div>
                   <div class="col-xs-11">
                      <input type="text" name="double-array1" value="" placeholder="Your 1st dataset, separated by a comma.">
@@ -88,9 +81,7 @@
                 </div>
                 </div>
           </div>
-          
         </div>
-        
       </div>
     </script>
 
@@ -123,5 +114,15 @@
   <script src="js/router.js"></script>
   <!-- to activate the test runner, add the "?test" query string parameter -->
   <script src="tests/runner.js"></script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-59013809-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
 </body>
 </html>
